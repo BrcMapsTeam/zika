@@ -1,3 +1,9 @@
+body {
+    font-family: 'Gotham-Light', sans-serif;
+    font-weight: 350;
+    margin-bottom:20px;
+}
+
 .titledesc{
     font-size:1.2em;
     color: #555;
@@ -9,4 +15,36 @@ p {
 
 .rightalign {
     text-align:right;
+}
+
+.keyfiguredesc {
+    font-size:1.5em;
+}
+
+.keyfigure {
+    color: #B71C1C;
+    font-size:4em;
+}
+
+.keyfigureunit {
+    font-size:0.5em;
+    color:#000;
+}
+
+.title {
+    margin-top:20px;
+    margin-bottom:20px;
+    background-color:#eee;
+}
+
+a {
+    color:#B71C1C;
+}
+
+a:hover {
+    color:#B71C1C;
+}
+
+h1 {
+    color:#B71C1C;
 }
