@@ -26,6 +26,11 @@ p {
     font-size:4em;
 }
 
+.data {
+    font-size:1em;
+    padding-bottom:10px;
+}
+
 .keyfigureunit {
     font-size:0.5em;
     color:#000;
