@@ -55,7 +55,7 @@ var format = d3.format("0,000");
 
 $.ajax({
 		type:'GET',
-		url: 'https://proxy.hxlstandard.org/data.json?filter01=select&select-query01-01=%23severity%3DSuspected&count-tags02=%23date%2BEPIweek%2Boutbreak&filter03=count&url=https%3A//docs.google.com/spreadsheets/d/1_S6PA5L32Mq7H_cfp9NAe-Y8-17hNer2OMyb3hVPTvU/pub%3Fgid%3D1516521608%26single%3Dtrue%26output%3Dcsv&force=on&count-tags03=%23date%2BEPIweek%2Boutbreak&select-query02-01=%23affected%21%3D0&filter02=select&strip-headers=on', 
+		url: 'https://proxy.hxlstandard.org/data.json?filter01=select&select-query01-01=%23severity%3DSuspected&count-tags02=%23date%2BEPIweek%2Boutbreak&filter03=count&url=https%3A//docs.google.com/spreadsheets/d/1_S6PA5L32Mq7H_cfp9NAe-Y8-17hNer2OMyb3hVPTvU/pub%3Fgid%3D1516521608%26single%3Dtrue%26output%3Dcsv&count-tags03=%23date%2BEPIweek%2Boutbreak&select-query02-01=%23affected%21%3D0&filter02=select&strip-headers=on', 
     	dataType: 'json',		
       	success: function(data) {
       		data = hxlProxyToJSON(data);
@@ -76,7 +76,7 @@ $.ajax({
 
 $.ajax({
 		type:'GET',
-		url: 'https://proxy.hxlstandard.org/data.json?url=https%3A//docs.google.com/spreadsheets/d/1_S6PA5L32Mq7H_cfp9NAe-Y8-17hNer2OMyb3hVPTvU/pub%3Fgid%3D1516521608%26single%3Dtrue%26output%3Dcsv&filter01=count&count-tags01=date%2BEPIweek%2Boutbreak%2Cseverity&count-aggregate-tag01=%23affected&force=on&strip-headers=on', 
+		url: 'https://proxy.hxlstandard.org/data.json?url=https%3A//docs.google.com/spreadsheets/d/1_S6PA5L32Mq7H_cfp9NAe-Y8-17hNer2OMyb3hVPTvU/pub%3Fgid%3D1516521608%26single%3Dtrue%26output%3Dcsv&filter01=count&count-tags01=date%2BEPIweek%2Boutbreak%2Cseverity&count-aggregate-tag01=%23affected&strip-headers=on', 
     	dataType: 'json',		
       	success: function(data) {
       		data = hxlProxyToJSON(data);
