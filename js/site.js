@@ -26,6 +26,31 @@ function hxlProxyToJSON(input,headers){
     return output;
 }
 
+function sparkLine(id,data){
+
+	var width = 100;
+	var height = 25;
+	var x = d3.scale.linear().range([0, width]);
+	var y = d3.scale.linear().range([height, 0]);
+	var line = d3.svg.line()
+             .x(function(d,i) { return x(i); })
+             .y(function(d) { return y(d); })
+             .interpolate("basis");	
+	x.domain([0,data.length-1]);
+  	y.domain(d3.extent(data, function(d) { return d; }));
+
+  	d3.select(id)
+	    .append('svg')
+	    .attr('width', width)
+	    .attr('height', height)
+	    .append('path')
+	    .datum(data)
+	    .attr('class', 'sparkline')
+	    .attr('d', line)
+	    .attr('stroke','#B71C1C')
+	    .attr('stroke-width',1);
+}
+
 var format = d3.format("0,000");
 
 $.ajax({
@@ -37,15 +62,16 @@ $.ajax({
       		data.forEach(function(d){
       			d['#date+epiweek+outbreak'] = +d['#date+epiweek+outbreak']
       		});
-      		var maxWeek = d3.max(data,function(d){
-      			return d['#date+epiweek+outbreak'];
-      		})
+			data.sort(function(a, b){
+				return a['#date+epiweek+outbreak'] - b['#date+epiweek+outbreak'];
+			});
+      		$('#affectedcountries').html(data[data.length-1]['#meta+count']);
+      		var sparkData = [];
       		data.forEach(function(d){
-      			if(d['#date+epiweek+outbreak']==maxWeek){
-      				$('#affectedcountries').html(d['#meta+count']);
-      			}
-      		})
-     	}
+      			sparkData.push(d['#meta+count']);
+      		});
+      		sparkLine('#countriesspark',sparkData);
+      	}
     });
 
 $.ajax({
@@ -60,20 +86,25 @@ $.ajax({
       		var maxWeek = d3.max(data,function(d){
       			return d['#date+epiweek+outbreak'];
       		})
+      		deaths = [];
+      		suspecteds = [];
+      		confirmeds = [];
       		data.forEach(function(d){
       			if(d['#date+epiweek+outbreak']==maxWeek && d['#severity']=='Confirmed'){
       				$('#confirmed').html(format(d['#meta+sum']));
       			}
-      		});
-      		data.forEach(function(d){
+      			if(d['#severity']=='Confirmed'){confirmeds.push(d['#meta+sum'])};
       			if(d['#date+epiweek+outbreak']==maxWeek && d['#severity']=='Suspected'){
       				$('#suspected').html(format(d['#meta+sum']));
       			}
-      		});
-      		data.forEach(function(d){
+      			if(d['#severity']=='Suspected'){suspecteds.push(d['#meta+sum'])};
       			if(d['#date+epiweek+outbreak']==maxWeek && d['#severity']=='Deaths'){
       				$('#deaths').html(format(d['#meta+sum']));
       			}
-      		});      		
+      			if(d['#severity']=='Deaths'){deaths.push(d['#meta+sum'])};
+      		});
+      		sparkLine('#deathsspark',deaths);
+      		sparkLine('#suspectedspark',suspecteds);
+      		sparkLine('#confirmedspark',confirmeds);      		
      	}
     });
