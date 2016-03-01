@@ -50,7 +50,8 @@ function sparkLine(id,data){
 	    .attr('class', 'sparkline')
 	    .attr('d', line)
 	    .attr('stroke','#B71C1C')
-	    .attr('stroke-width',3);
+	    .attr('stroke-width',3)
+      .attr('fill','none');
 }
 
 var format = d3.format("0,000");
