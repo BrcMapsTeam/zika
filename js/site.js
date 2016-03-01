@@ -30,8 +30,8 @@ function sparkLine(id,data){
 
 	var width = 100;
 	var height = 25;
-	var x = d3.scale.linear().range([0, width]);
-	var y = d3.scale.linear().range([height, 0]);
+	var x = d3.scale.linear().range([0, width-4]);
+	var y = d3.scale.linear().range([height-4, 0]);
 	var line = d3.svg.line()
              .x(function(d,i) { return x(i); })
              .y(function(d) { return y(d); })
@@ -43,12 +43,14 @@ function sparkLine(id,data){
 	    .append('svg')
 	    .attr('width', width)
 	    .attr('height', height)
+	    .append("g")
+	    .attr("transform", "translate(2,2)")
 	    .append('path')
 	    .datum(data)
 	    .attr('class', 'sparkline')
 	    .attr('d', line)
 	    .attr('stroke','#B71C1C')
-	    .attr('stroke-width',1);
+	    .attr('stroke-width',3);
 }
 
 var format = d3.format("0,000");
