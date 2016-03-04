@@ -1,7 +1,5 @@
 import hxl
 import re
-import codecs
-
 
 def translate(page,output,data,tag):
     
