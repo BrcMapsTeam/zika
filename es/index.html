@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Vector-Borne Disease Operation</title>
+        <title>Operación de Enfermedades transmitidas por vectores</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="css/site.css"/>
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/site.css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script src="js/d3.min.js"></script>
+        <script src="../js/d3.min.js"></script>
         <script type="text/javascript">
             var _gaq = _gaq || [];
             _gaq.push(['_setAccount', 'UA-46399763-1']);
@@ -24,36 +24,36 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    <h1>Vector-Borne Disease Operation</h1>
-                    <p class="titledesc">Welcome to the IFRC Americas Region page for resources for the response.</p>
-                    <p class="titledesc">Some of the resources might be behind a password.  If you think you need access please contact <a href="mailto:zikaoperation.americas@ifrc.org" target="_blank">zikaoperation.americas@ifrc.org</a> to be added.</p>
+                    <h1>Operación de Enfermedades transmitidas por vectores</h1>
+                    <p class="titledesc">Bienvenido a la Federación Internacional de Sociedades de la Cruz Roja en la Región Americana para facilitar recursos para la respuesta</p>
+                    <p class="titledesc">Algunos de los expedientes pueden estar protegidos con contraseña. Si necesita acceso por favor contactarse con <a href="../mailto:zikaoperation.americas@ifrc.org" target="_blank">zikaoperation.americas@ifrc.org</a></p>
                 </div>
                 <div class="col-md-4">
-                    <p id="image"class="rightalign"><img src="thumbs/ifrc.png" height="50" width="300"/></p>
+                    <p id="image"class="rightalign"><img src="../thumbs/ifrc.png" height="50" width="300"/></p>
                     <h3 class="rightalign">IFRC Americas</h3>
                     <p class="titledesc rightalign">Produced by SIMS</p>
-                    <p class="small rightalign">Language <a id="englishpage" href="">English</a> <a id="spanishpage" href="">Español</a></p>
+                    <p class="small rightalign">Language <a id="englishpage" href="../">English</a> <a id="spanishpage" href="../">Español</a></p>
                 </div>
             </div>
             <div class="row title">
                 <div class="col-md-12">
-                    <h3>Key figures</h3>
+                    <h3>Cifras claves </h3>
                 </div>
             </div>
             <div class="row appeal">
                 <div class="col-md-4">
-                    <p class="keyfiguredesc">Appeal Amount</p>
+                    <p class="keyfiguredesc">Monto Apelación (millones)</p>
                     <p class="keyfigure">
                         <span class="keyfigureunit">CHF </span>2.38 <span class="keyfigureunit">million</span>
                     </p>
-                    <p class="data">IFRC: <a href="http://www.ifrc.org/Docs/Appeals/statistic/cover_emer.pdf" target="_blank">Data</a></p>
+                    <p class="data">IFRC: <a href="http://www.ifrc.org/Docs/Apelaciones/statistic/cover_emer.pdf" target="_blank">Data</a></p>
                 </div>
                 <div class="col-md-4">
-                    <p class="keyfiguredesc">Appeal Covered</p><p class="keyfigure"><span class="keyfigureunit">CHF </span>2.01 <span class="keyfigureunit">million</span></p>
-                    <p class="data">IFRC: <a href="http://www.ifrc.org/Docs/Appeals/statistic/cover_emer.pdf" target="_blank">Data</a></p>
+                    <p class="keyfiguredesc">Apelación cubierta (millones)</p><p class="keyfigure"><span class="keyfigureunit">CHF </span>2.01 <span class="keyfigureunit">million</span></p>
+                    <p class="data">IFRC: <a href="http://www.ifrc.org/Docs/Apelaciones/statistic/cover_emer.pdf" target="_blank">Data</a></p>
                 </div>
                 <div class="col-md-4">
-                    <p class="keyfiguredesc"># countries with suspected zika cases</p>
+                    <p class="keyfiguredesc"># países con casos de Zika</p>
                     <p>
                         <span id="affectedcountries" class="keyfigure"></span><span id="countriesspark" class="spark"></span>
                     </p>
@@ -62,7 +62,7 @@
             </div>
             <div class="row appeal">
                 <div class="col-md-4">
-                    <p class="keyfiguredesc">Zika deaths</p>
+                    <p class="keyfiguredesc">Muertos por Zika</p>
                     <p>
                         <span id="deaths" class="keyfigure"></span>
                         <span id="deathsspark" class="spark"></span>
@@ -72,7 +72,7 @@
                     </p>
                 </div>
                 <div class="col-md-4">
-                    <p class="keyfiguredesc">Zika confirmed Cases</p>
+                    <p class="keyfiguredesc">Casos de Zika confirmados</p>
                     <p>
                         <span id="confirmed" class="keyfigure"></span>
                         <span id="confirmedspark" class="spark"></span>
@@ -80,7 +80,7 @@
                     <p class="data">Health Ministries (Updated Weekly): <a href="https://docs.google.com/spreadsheets/d/1_S6PA5L32Mq7H_cfp9NAe-Y8-17hNer2OMyb3hVPTvU/edit?usp=sharing" target="_blank">Data</a></p>
                 </div>
                 <div class="col-md-4">
-                    <p class="keyfiguredesc">Zika suspected cases</p>
+                    <p class="keyfiguredesc">Casos de Zika sospechosos</p>
                     <p>
                         <span id="suspected" class="keyfigure"></span>
                         <span id="suspectedspark" class="spark"></span>
@@ -90,42 +90,42 @@
             </div>            
             <div class="row title">
                 <div class="col-md-12">
-                    <h3>Links to key resources</h3>
+                    <h3>Enlace para recursos claves </h3>
                 </div>
             </div>            
             <div class="row">
                 <div class="col-md-6 item">
-                    <h3><a href="https://ifrcorg-my.sharepoint.com/personal/zikaoperation_americas_ifrc_org/Documents/IFRC_Zika_Operations_Shared_Folder/02_Communications" target="_blank">Communications</a></h3>
+                    <h3><a href="https://ifrcorg-my.sharepoint.com/personal/zikaoperation_americas_ifrc_org/Documentos/IFRC_Zika_Operations_Shared_Folder/02_Comunicaciones" target="_blank">Comunicaciones</a></h3>
                 </div>
                 <div class="col-md-6 item">
-                    <h3>Documents</h3>
-                    <h4>Templates</h4>
-                    <h4>Appeals</h4>
-                    <h4>Op Updates</h4>
-                    <h4><a href="https://ifrcorg-my.sharepoint.com/personal/padru_rit15_ifrc_org/Documents/IFRC%20Zika%20Operation%20Shared%20Folder/Plan%20of%20Action" target="_blank">Plans of Action</a></h4>
+                    <h3>Documentos</h3>
+                    <h4>Plantillas</h4>
+                    <h4>Apelaciones</h4>
+                    <h4>Actualizaciones ‘Op’</h4>
+                    <h4><a href="https://ifrcorg-my.sharepoint.com/personal/padru_rit15_ifrc_org/Documentos/IFRC%20Zika%20Operation%20Shared%20Folder/Plan%20of%20Action" target="_blank">Planes de acción</a></h4>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 item">
-                    <h3><a href="https://ifrcorg-my.sharepoint.com/personal/zikaoperation_americas_ifrc_org/Documents/IFRC_Zika_Operations_Shared_Folder/03_IM_Products_and_Data_Sets/Maps" target="_blank">Maps</a></h3>
-                    <a href="https://ifrcorg-my.sharepoint.com/personal/zikaoperation_americas_ifrc_org/Documents/IFRC_Zika_Operations_Shared_Folder/03_IM_Products_and_Data_Sets/Maps" target="_blank"><img src="thumbs/map.png" height="150" width="400"/></a>
+                    <h3><a href="https://ifrcorg-my.sharepoint.com/personal/zikaoperation_americas_ifrc_org/Documentos/IFRC_Zika_Operations_Shared_Folder/03_IM_Products_and_Data_Sets/Mapas" target="_blank">Mapas</a></h3>
+                    <a href="https://ifrcorg-my.sharepoint.com/personal/zikaoperation_americas_ifrc_org/Documentos/IFRC_Zika_Operations_Shared_Folder/03_IM_Products_and_Data_Sets/Mapas" target="_blank"><img src="../thumbs/map.png" height="150" width="400"/></a>
                 </div>
                 <div class="col-md-6 item">
-                    <h3>Zika Organogram</h3>
+                    <h3>Organigrama del virus Zika</h3>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 item">
                     <h3><a href="http://54.174.75.66/closed/dashboards/zika/" target="_blank">Dashboard</a></h3>
-                    <a href="http://54.174.75.66/closed/dashboards/zika/" target="_blank"><img src="thumbs/dash.png" height="150" width="400"/></a>
+                    <a href="http://54.174.75.66/closed/dashboards/zika/" target="_blank"><img src="../thumbs/dash.png" height="150" width="400"/></a>
                 </div>
                 <div class="col-md-6 item">
-                    <h3>IFRC sites</h3>
-                    <h4><a href="https://fednet.ifrc.org/zika" target="_blank">Fed Net Zika Page</a></h4>
-                    <h4><a href="https://fednet.ifrc.org/zika" target="_blank">DMIS Zika Page</a></h4>
+                    <h3>Sitios de la Federación Internacional </h3>
+                    <h4><a href="https://fednet.ifrc.org/zika" target="_blank">Fed neto página del virus Zika</a></h4>
+                    <h4><a href="https://fednet.ifrc.org/zika" target="_blank">DMIS página del virus Zika</a></h4>
                 </div>
             </div>                                                                                 
         </div>
-        <script src="js/site.js"></script>
+        <script src="../js/site.js"></script>
     </body>
 </html>
