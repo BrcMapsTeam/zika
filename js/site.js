@@ -26,6 +26,10 @@ function hxlProxyToJSON(input,headers){
     return output;
 }
 
+function getBaseUrl() {
+    return 'http://brcmapsteam.github.io/zika'
+}
+
 function sparkLine(id,data){
 
 	var width = 100;
@@ -55,6 +59,9 @@ function sparkLine(id,data){
 }
 
 var format = d3.format("0,000");
+
+$('#englishpage').attr("href", getBaseUrl());
+$('#spanishpage').attr("href", getBaseUrl()+"/es/")
 
 $.ajax({
 		type:'GET',
@@ -92,6 +99,7 @@ $.ajax({
       		deaths = [];
       		suspecteds = [];
       		confirmeds = [];
+          console.log(data);
       		data.forEach(function(d){
       			if(d['#date+epiweek+outbreak']==maxWeek && d['#severity']=='Confirmed'){
       				$('#confirmed').html(format(d['#meta+sum']));
