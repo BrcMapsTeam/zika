@@ -62,6 +62,8 @@ var format = d3.format("0,000");
 
 $('#englishpage').attr("href", getBaseUrl());
 $('#spanishpage').attr("href", getBaseUrl()+"/es/")
+$('#portuguesepage').attr("href", getBaseUrl()+"/pt/")
+$('#frenchpage').attr("href", getBaseUrl()+"/fr/")
 
 $.ajax({
 		type:'GET',
