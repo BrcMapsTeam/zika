@@ -15,7 +15,7 @@ def translate(page,output,data,tag):
     with open(output, "w") as text_file:
         text_file.write(contents)
         
-url = 'https://docs.google.com/spreadsheets/d/11HSDC5LwjwrR1rqPsHHCsQKKjy-7TBaVuVIcFR3sfU8/pub?gid=0&single=true&output=csv'
+url = 'https://docs.google.com/spreadsheets/d/11HSDC5LwjwrR1rqPsHHCsQKKjy-7TBaVuVIcFR3sfU8/pub?gid=0&single=true&output=csv&force=1'
 data = hxl.data(url)
 translate('../index.html','../es/index.html',data,'#meta+text+es')
 data = hxl.data(url)
